@@ -45,4 +45,3 @@ Ollama — программа для запуска моделей и локал
 Промпт — инструкции и вопрос, которые отправляются модели. В messages роль system задаёт поведение помощника, user содержит описание проблемы. stream=false позволяет получить ответ целиком одним JSON. think=false отключает отдельный режим рассуждений для этой проверки. FastAPI теперь вызывает модель через POST /api/diagnostics; React вызывает её через кнопку диагностики, а создание заявки остаётся отдельным действием. Подробности учебного API — в README.
 
 Источники: [Windows](https://docs.ollama.com/windows), [чат API](https://docs.ollama.com/api/chat), [официальный GGUF Qwen](https://huggingface.co/Qwen/Qwen3-4B-GGUF), [импорт GGUF](https://docs.ollama.com/import), [FAQ](https://docs.ollama.com/faq).
-
