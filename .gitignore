@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+.local/
+node_modules/
+dist/
+
+# Local learning notes
+AGENTS.md
+docs/development-history.md
+docs/superpowers/
+*.gguf
+

@@ -1,0 +1,72 @@
+{
+  "scope": "development_examples_mode_only_human_fact_review_required",
+  "tickets_unchanged": true,
+  "cases": [
+    {
+      "description": "На телефоне интернет есть, на ноутбуке нет. Переподключение к сети не помогло.",
+      "expected_mode": "draft",
+      "passed": true,
+      "response": {
+        "mode": "draft",
+        "draft": {
+          "subject": "Проблема с интернетом на ноутбуке",
+          "description": "Интернет работает на телефоне, но не работает на ноутбуке. Попытки переподключения к сети не помогли."
+        },
+        "model": "qwen3:4b",
+        "saved": false,
+        "message": "Черновик подготовлен. Проверьте факты и текст перед использованием в форме."
+      }
+    },
+    {
+      "description": "По кабелю интернет работает, но сеть Wi-Fi не видна. Роутер уже перезагружал.",
+      "expected_mode": "draft",
+      "passed": true,
+      "response": {
+        "mode": "draft",
+        "draft": {
+          "subject": "Проблема с Wi-Fi",
+          "description": "Интернет работает по кабелю, но Wi-Fi не виден. Роутер перезагружался, проблема не исчезла."
+        },
+        "model": "qwen3:4b",
+        "saved": false,
+        "message": "Черновик подготовлен. Проверьте факты и текст перед использованием в форме."
+      }
+    },
+    {
+      "description": "Привет",
+      "expected_mode": "clarify",
+      "passed": true,
+      "response": {
+        "mode": "clarify",
+        "draft": null,
+        "model": "qwen3:4b",
+        "saved": false,
+        "message": "Опишите проблему с подключением и выполненные проверки, чтобы подготовить черновик."
+      }
+    },
+    {
+      "description": "Как приготовить борщ?",
+      "expected_mode": "clarify",
+      "passed": true,
+      "response": {
+        "mode": "clarify",
+        "draft": null,
+        "model": "qwen3:4b",
+        "saved": false,
+        "message": "Опишите проблему с подключением и выполненные проверки, чтобы подготовить черновик."
+      }
+    },
+    {
+      "description": "ничего не работает",
+      "expected_mode": "clarify",
+      "passed": true,
+      "response": {
+        "mode": "clarify",
+        "draft": null,
+        "model": null,
+        "saved": false,
+        "message": "Опишите, что именно не работает, на каких устройствах и что вы уже проверили."
+      }
+    }
+  ]
+}

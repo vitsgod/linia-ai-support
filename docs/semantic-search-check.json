@@ -1,0 +1,123 @@
+{
+  "model": "qwen3-embedding:0.6b",
+  "dimensions": 1024,
+  "chunk_count": 12,
+  "storage": "in_memory_demo",
+  "results": [
+    {
+      "query": "На телефоне интернет есть, а на ноутбуке нет",
+      "expected_document": "one-device-offline",
+      "top_document": "one-device-offline",
+      "matches": [
+        {
+          "id": "one-device-offline:01",
+          "document": "one-device-offline",
+          "score": 0.683152
+        },
+        {
+          "id": "one-device-offline:03",
+          "document": "one-device-offline",
+          "score": 0.623109
+        },
+        {
+          "id": "one-device-offline:02",
+          "document": "one-device-offline",
+          "score": 0.616677
+        }
+      ],
+      "passed": true
+    },
+    {
+      "query": "По кабелю всё работает, но ни одно устройство не видит сеть Wi-Fi",
+      "expected_document": "wifi-network-missing",
+      "top_document": "wifi-network-missing",
+      "matches": [
+        {
+          "id": "wifi-network-missing:02",
+          "document": "wifi-network-missing",
+          "score": 0.751344
+        },
+        {
+          "id": "wifi-network-missing:03",
+          "document": "wifi-network-missing",
+          "score": 0.716782
+        },
+        {
+          "id": "wifi-network-missing:01",
+          "document": "wifi-network-missing",
+          "score": 0.678351
+        }
+      ],
+      "passed": true
+    },
+    {
+      "query": "Хочу передать проблему специалисту. Какие данные нужны для заявки?",
+      "expected_document": "escalation",
+      "top_document": "escalation",
+      "matches": [
+        {
+          "id": "escalation:02",
+          "document": "escalation",
+          "score": 0.720049
+        },
+        {
+          "id": "one-device-offline:03",
+          "document": "one-device-offline",
+          "score": 0.625068
+        },
+        {
+          "id": "escalation:01",
+          "document": "escalation",
+          "score": 0.564313
+        }
+      ],
+      "passed": true
+    },
+    {
+      "query": "Интернет пропал на всех домашних устройствах",
+      "expected_document": "all-devices-offline",
+      "top_document": "all-devices-offline",
+      "matches": [
+        {
+          "id": "all-devices-offline:01",
+          "document": "all-devices-offline",
+          "score": 0.663686
+        },
+        {
+          "id": "all-devices-offline:02",
+          "document": "all-devices-offline",
+          "score": 0.630317
+        },
+        {
+          "id": "one-device-offline:03",
+          "document": "one-device-offline",
+          "score": 0.594305
+        }
+      ],
+      "passed": true
+    },
+    {
+      "query": "Как приготовить борщ?",
+      "expected_document": null,
+      "top_document": "one-device-offline",
+      "matches": [
+        {
+          "id": "one-device-offline:03",
+          "document": "one-device-offline",
+          "score": 0.318054
+        },
+        {
+          "id": "escalation:01",
+          "document": "escalation",
+          "score": 0.31618
+        },
+        {
+          "id": "escalation:02",
+          "document": "escalation",
+          "score": 0.315917
+        }
+      ],
+      "passed": null
+    }
+  ]
+}

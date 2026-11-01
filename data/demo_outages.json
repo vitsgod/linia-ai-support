@@ -1,0 +1,13 @@
+{
+  "demo-north": {
+    "status": "active",
+    "incident": {
+      "id": "DEMO-OUTAGE-001",
+      "title": "Учебный обрыв связи на узле Северный"
+    }
+  },
+  "demo-center": {
+    "status": "clear",
+    "incident": null
+  }
+}

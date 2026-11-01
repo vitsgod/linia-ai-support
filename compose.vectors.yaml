@@ -1,0 +1,19 @@
+name: provider-support-vectors
+services:
+  vectors:
+    image: pgvector/pgvector:0.8.7-pg18-trixie@sha256:5895949dfcdf308eb0cd31c950c93c14895c77f33fbedfecf1fa511ab1d4bcd2
+    environment:
+      POSTGRES_USER: provider_vectors
+      POSTGRES_DB: provider_knowledge
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Use scripts/local_vector_db.py}
+    ports:
+      - "127.0.0.1:55433:5432"
+    volumes:
+      - knowledge-data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U provider_vectors -d provider_knowledge"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+volumes:
+  knowledge-data:

@@ -1,0 +1,153 @@
+{
+  "scope": "six_development_examples_not_general_accuracy",
+  "cases": [
+    {
+      "area_code": "demo-north",
+      "question": "Проверь, есть ли авария в выбранном районе.",
+      "native_calls": [
+        [
+          {
+            "id": "lFniY1gTJPZ0HO1fxIDQkucZVRLBws65",
+            "function": {
+              "index": 0,
+              "name": "check_outage_status",
+              "arguments": {
+                "area_code": "demo-north"
+              }
+            }
+          }
+        ]
+      ],
+      "response": {
+        "mode": "tool_result",
+        "answer": "Учебный Северный. В учебном наборе зарегистрирована авария. Срок восстановления не указан.",
+        "model": "qwen3:4b",
+        "tool_name": "check_outage_status",
+        "tool_result": {
+          "area_code": "demo-north",
+          "area_name": "Учебный Северный",
+          "status": "active",
+          "incident": {
+            "id": "DEMO-OUTAGE-001",
+            "title": "Учебный обрыв связи на узле Северный"
+          },
+          "message": "В учебном наборе зарегистрирована авария. Срок восстановления не указан.",
+          "checked_at": "2026-11-01T19:55:39.252898Z",
+          "demo": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "area_code": "demo-center",
+      "question": "Проверь, есть ли авария в выбранном районе.",
+      "native_calls": [
+        [
+          {
+            "id": "q1Fepyo2VWh2GRM9lLP15w8H7PcoWmJi",
+            "function": {
+              "index": 0,
+              "name": "check_outage_status",
+              "arguments": {
+                "area_code": "demo-center"
+              }
+            }
+          }
+        ]
+      ],
+      "response": {
+        "mode": "tool_result",
+        "answer": "Учебный Центральный. В учебном наборе аварий не зарегистрировано. Это не доказывает, что подключение исправно.",
+        "model": "qwen3:4b",
+        "tool_name": "check_outage_status",
+        "tool_result": {
+          "area_code": "demo-center",
+          "area_name": "Учебный Центральный",
+          "status": "clear",
+          "incident": null,
+          "message": "В учебном наборе аварий не зарегистрировано. Это не доказывает, что подключение исправно.",
+          "checked_at": "2026-11-01T19:55:41.290051Z",
+          "demo": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "area_code": "demo-south",
+      "question": "Проверь, есть ли авария в выбранном районе.",
+      "native_calls": [
+        [
+          {
+            "id": "puGN9JEjtRLOsPUSGbSxlQ1OUNYF5dmh",
+            "function": {
+              "index": 0,
+              "name": "check_outage_status",
+              "arguments": {
+                "area_code": "demo-south"
+              }
+            }
+          }
+        ]
+      ],
+      "response": {
+        "mode": "tool_result",
+        "answer": "Учебный Южный. В учебном наборе нет данных по этому району. Сделать вывод о наличии аварии нельзя.",
+        "model": "qwen3:4b",
+        "tool_name": "check_outage_status",
+        "tool_result": {
+          "area_code": "demo-south",
+          "area_name": "Учебный Южный",
+          "status": "unknown",
+          "incident": null,
+          "message": "В учебном наборе нет данных по этому району. Сделать вывод о наличии аварии нельзя.",
+          "checked_at": "2026-11-01T19:55:43.402161Z",
+          "demo": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "area_code": "demo-north",
+      "question": "Привет",
+      "native_calls": [
+        null
+      ],
+      "response": {
+        "mode": "clarify",
+        "answer": "Этот помощник проверяет учебные аварии. Сформулируйте просьбу проверить аварию в выбранном районе.",
+        "model": "qwen3:4b",
+        "tool_name": null,
+        "tool_result": null
+      },
+      "passed": true
+    },
+    {
+      "area_code": "demo-north",
+      "question": "Как приготовить борщ?",
+      "native_calls": [
+        null
+      ],
+      "response": {
+        "mode": "clarify",
+        "answer": "Этот помощник проверяет учебные аварии. Сформулируйте просьбу проверить аварию в выбранном районе.",
+        "model": "qwen3:4b",
+        "tool_name": null,
+        "tool_result": null
+      },
+      "passed": true
+    },
+    {
+      "area_code": null,
+      "question": "Проверь аварии",
+      "native_calls": [],
+      "response": {
+        "mode": "clarify",
+        "answer": "Выберите учебный район для проверки аварий.",
+        "model": null,
+        "tool_name": null,
+        "tool_result": null
+      },
+      "passed": true
+    }
+  ]
+}

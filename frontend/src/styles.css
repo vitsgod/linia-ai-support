@@ -1,0 +1,628 @@
+:root{
+  font-family:'IBM Plex Sans',sans-serif;
+  color:#131416;
+  background:#edf3f4;
+  font-synthesis:none;
+  font-weight:400;
+  --muted:#5d5f60;
+  --border:#e8eaec;
+  --accent:#1b6c80;
+  --error:#a91e26}
+  *{
+    box-sizing:border-box}
+    body{
+      margin:0;
+      min-width:320px}
+      button,input,textarea{
+        font:inherit}
+        button,a,input,textarea{
+          touch-action:manipulation}
+          button,a{
+            cursor:pointer}
+            button{
+              min-height:44px}
+              button:disabled{
+                cursor:wait;
+                opacity:.65}
+                a{
+                  color:inherit}
+                  button:focus-visible,a:focus-visible,summary:focus-visible{
+                    outline:3px solid var(--accent);
+                    outline-offset:3px}
+                    input:focus,textarea:focus{
+                      outline:2px solid var(--accent);
+                      outline-offset:2px}
+                      h1,h2,h3,p{
+                        margin:0}
+                        button{
+                          transition:background-color .15s}
+                          fieldset{
+                            border:0;
+                            padding:0;
+                            margin:0;
+                            min-width:0}
+                            input,textarea{
+                              width:100%;
+                              min-height:44px;
+                              border:1px solid #b7c2c6;
+                              border-radius:6px;
+                              background:white;
+                              color:#131416;
+                              padding:11px 12px;
+                              font-size:16px}
+                              textarea{
+                                resize:vertical;
+                                min-height:132px}
+                                input::placeholder,textarea::placeholder{
+                                  color:#737c80}
+                                  input[aria-invalid=true],textarea[aria-invalid=true]{
+                                    border-color:var(--error)}
+                                    .app-frame{
+                                      max-width:1600px;
+                                      margin:auto;
+                                      padding:0 16px 16px}
+                                      .app-header{
+                                        min-height:78px;
+                                        display:flex;
+                                        align-items:center;
+                                        justify-content:space-between;
+                                        padding:0 28px;
+                                        gap:20px}
+                                        .brand{
+                                          display:flex;
+                                          align-items:center;
+                                          gap:10px;
+                                          text-decoration:none;
+                                          color:var(--accent);
+                                          font-weight:600;
+                                          font-size:24px;
+                                          letter-spacing:-.6px}
+                                          .brand-divider{
+                                            color:#a5b3b8;
+                                            margin:0 13px;
+                                            font-weight:400}
+                                            .brand-subtitle{
+                                              font-size:16px;
+                                              font-weight:400;
+                                              color:#455c65;
+                                              letter-spacing:0}
+                                              .workspace-label{
+                                                font-size:13px;
+                                                color:var(--muted)}
+                                                .work-sheet{
+                                                  background:white;
+                                                  min-height:calc(100vh - 94px);
+                                                  border:1px solid #dbe3e6;
+                                                  border-radius:16px;
+                                                  overflow:hidden}
+                                                  .page-heading{
+                                                    padding:36px 40px 30px;
+                                                    border-bottom:1px solid var(--border);
+                                                    display:flex;
+                                                    justify-content:space-between;
+                                                    gap:24px;
+                                                    align-items:center}
+                                                    h1{
+                                                      font-size:28px;
+                                                      font-weight:500;
+                                                      letter-spacing:-.6px;
+                                                      line-height:1.25}
+                                                      .page-heading p:last-child{
+                                                        color:var(--muted);
+                                                        font-size:15px;
+                                                        margin-top:12px}
+                                                        .local-label{
+                                                          white-space:nowrap;
+                                                          font-size:12px;
+                                                          border:1px solid #dbe3e6;
+                                                          padding:6px 10px;
+                                                          border-radius:5px;
+                                                          color:var(--muted)}
+                                                          /* At 1440: sheet 1408 - 80 padding - 48 gap = 1280, columns 400 + 880. */
+                                                          .workspace{
+                                                            display:grid;
+                                                            grid-template-columns:minmax(300px,400px) minmax(0,1fr);
+                                                            gap:48px;
+                                                            padding:32px 40px 40px;
+                                                            align-items:start}
+                                                            .form-section,.list-section{
+                                                              min-width:0}
+                                                              .section-heading{
+                                                                display:flex;
+                                                                align-items:center;
+                                                                gap:10px}
+                                                                h2{
+                                                                  font-size:18px;
+                                                                  font-weight:500;
+                                                                  line-height:1.4}
+                                                                  .section-intro{
+                                                                    font-size:14px;
+                                                                    color:var(--muted);
+                                                                    line-height:1.6;
+                                                                    margin-top:8px;
+                                                                    margin-bottom:24px}
+                                                                    .field{
+                                                                      margin-bottom:21px}
+                                                                      .field label{
+                                                                        display:block;
+                                                                        font-size:14px;
+                                                                        font-weight:500;
+                                                                        margin-bottom:8px}
+                                                                        .field label span{
+                                                                          color:#65767e}
+                                                                          .field-help{
+                                                                            font-size:12px;
+                                                                            color:var(--muted);
+                                                                            margin-top:8px}
+                                                                            .primary-button{
+                                                                              width:100%;
+                                                                              display:flex;
+                                                                              justify-content:space-between;
+                                                                              align-items:center;
+                                                                              border:1px solid #18282f;
+                                                                              background:#18282f;
+                                                                              color:white;
+                                                                              padding:12px 16px;
+                                                                              border-radius:6px;
+                                                                              font-weight:500;
+                                                                              font-size:15px}
+                                                                              .primary-button:hover{
+                                                                                background:#2f4853}
+                                                                                .primary-button span{
+                                                                                  font-size:20px;
+                                                                                  line-height:1}
+                                                                                  .privacy-note{
+                                                                                    font-size:12px;
+                                                                                    color:var(--muted);
+                                                                                    line-height:1.5;
+                                                                                    margin-top:18px}
+                                                                                    .list-section{
+                                                                                      border-left:1px solid var(--border);
+                                                                                      padding-left:32px}
+                                                                                      .list-header{
+                                                                                        display:flex;
+                                                                                        justify-content:space-between;
+                                                                                        align-items:center;
+                                                                                        gap:12px;
+                                                                                        min-height:44px;
+                                                                                        margin-top:-8px}
+                                                                                        .count{
+                                                                                          display:inline-block;
+                                                                                          margin-left:7px;
+                                                                                          padding:1px 7px;
+                                                                                          background:#edf2f4;
+                                                                                          border-radius:4px;
+                                                                                          font-size:13px;
+                                                                                          color:#455c65;
+                                                                                          vertical-align:middle;
+                                                                                          font-variant-numeric:tabular-nums}
+                                                                                          .refresh-button{
+                                                                                            background:white;
+                                                                                            border:1px solid #cbd5d9;
+                                                                                            padding:8px 12px;
+                                                                                            border-radius:6px;
+                                                                                            font-size:13px;
+                                                                                            color:#354d58}
+                                                                                            .refresh-button:hover{
+                                                                                              background:#f1f5f6}
+                                                                                              .ticket{
+                                                                                                border-top:1px solid var(--border);
+                                                                                                padding:22px 0}
+                                                                                                .ticket-meta{
+                                                                                                  display:flex;
+                                                                                                  align-items:center;
+                                                                                                  gap:14px;
+                                                                                                  margin-bottom:10px}
+                                                                                                  .ticket-id{
+                                                                                                    font-size:13px;
+                                                                                                    color:#536b76;
+                                                                                                    font-variant-numeric:tabular-nums}
+                                                                                                    .status{
+                                                                                                      display:flex;
+                                                                                                      align-items:center;
+                                                                                                      gap:6px;
+                                                                                                      font-size:12px;
+                                                                                                      color:#1b6c80}
+                                                                                                      .status>span{
+                                                                                                        width:6px;
+                                                                                                        height:6px;
+                                                                                                        background:#1b6c80;
+                                                                                                        border-radius:50%}
+                                                                                                        .ticket h3{
+                                                                                                          font-size:16px;
+                                                                                                          font-weight:500;
+                                                                                                          line-height:1.5;
+                                                                                                          overflow-wrap:anywhere}
+                                                                                                          .ticket-description{
+                                                                                                            font-size:14px;
+                                                                                                            line-height:1.7;
+                                                                                                            color:#53616a;
+                                                                                                            margin-top:7px;
+                                                                                                            white-space:pre-wrap;
+                                                                                                            overflow-wrap:anywhere}
+                                                                                                            .ticket-footer{
+                                                                                                              display:flex;
+                                                                                                              justify-content:space-between;
+                                                                                                              flex-wrap:wrap;
+                                                                                                              gap:8px 16px;
+                                                                                                              margin-top:16px;
+                                                                                                              color:var(--muted);
+                                                                                                              font-size:12px;
+                                                                                                              overflow-wrap:anywhere}
+                                                                                                              .ticket-footer time{
+                                                                                                                font-variant-numeric:tabular-nums}
+                                                                                                                .ticket details{
+                                                                                                                  font-size:14px;
+                                                                                                                  margin-top:10px;
+                                                                                                                  color:var(--muted)}
+                                                                                                                  summary{
+                                                                                                                    cursor:pointer;
+                                                                                                                    min-height:30px}
+                                                                                                                    .empty-state{
+                                                                                                                      border:1px dashed #cbd5d9;
+                                                                                                                      border-radius:6px;
+                                                                                                                      padding:32px 24px;
+                                                                                                                      line-height:1.7;
+                                                                                                                      color:var(--muted);
+                                                                                                                      font-size:14px}
+                                                                                                                      .empty-state h3{
+                                                                                                                        font-size:16px;
+                                                                                                                        color:#354d58;
+                                                                                                                        font-weight:500;
+                                                                                                                        margin-bottom:8px}
+                                                                                                                        .message{
+                                                                                                                          padding:12px 14px;
+                                                                                                                          border-radius:6px;
+                                                                                                                          margin:0 0 20px;
+                                                                                                                          font-size:14px;
+                                                                                                                          line-height:1.6;
+                                                                                                                          overflow-wrap:anywhere}
+                                                                                                                          .message strong{
+                                                                                                                            font-weight:500}
+                                                                                                                            .error-message{
+                                                                                                                              background:#fff2f1;
+                                                                                                                              color:#92202a;
+                                                                                                                              border:1px solid #f1c7c8}
+                                                                                                                              .error-message:focus{
+                                                                                                                                outline:2px solid var(--error);
+                                                                                                                                outline-offset:2px}
+                                                                                                                                .error-message ul{
+                                                                                                                                  padding-left:18px;
+                                                                                                                                  margin:5px 0 0}
+                                                                                                                                  .field-error{
+                                                                                                                                    font-size:13px;
+                                                                                                                                    color:var(--error);
+                                                                                                                                    margin-top:7px}
+                                                                                                                                    .success-message{
+                                                                                                                                      background:#edf6f2;
+                                                                                                                                      color:#225d46;
+                                                                                                                                      border:1px solid #cfe3d8;
+                                                                                                                                      margin:18px 0 0}
+                                                                                                                                      .app-footer{
+                                                                                                                                        display:flex;
+                                                                                                                                        justify-content:space-between;
+                                                                                                                                        gap:12px;
+                                                                                                                                        flex-wrap:wrap;
+                                                                                                                                        padding:20px 40px;
+                                                                                                                                        border-top:1px solid var(--border);
+                                                                                                                                        color:var(--muted);
+                                                                                                                                        font-size:12px}
+                                                                                                                                        .skip-link{
+                                                                                                                                          position:absolute;
+                                                                                                                                          left:16px;
+                                                                                                                                          top:-80px;
+                                                                                                                                          padding:10px;
+                                                                                                                                          background:white;
+                                                                                                                                          z-index:5}
+                                                                                                                                          .skip-link:focus{
+                                                                                                                                            top:12px}
+                                                                                                                                            @media(max-width:1000px){
+                                                                                                                                              .workspace{
+                                                                                                                                                grid-template-columns:minmax(280px,360px) minmax(0,1fr);
+                                                                                                                                                gap:24px;
+                                                                                                                                                padding:28px}
+                                                                                                                                                .page-heading{
+                                                                                                                                                  padding:28px}
+                                                                                                                                                  .list-section{
+                                                                                                                                                    padding-left:24px}
+                                                                                                                                                    .app-footer{
+                                                                                                                                                      padding:20px 28px}
+                                                                                                                                                    }
+
+                                                                                                                                                    @media(max-width:720px){
+                                                                                                                                                      .app-frame{
+                                                                                                                                                        padding:0 8px 8px}
+                                                                                                                                                        .app-header{
+                                                                                                                                                          padding:0 12px;
+                                                                                                                                                          min-height:68px}
+                                                                                                                                                          .workspace-label{
+                                                                                                                                                            display:none}
+                                                                                                                                                            .brand{
+                                                                                                                                                              font-size:22px}
+                                                                                                                                                              .page-heading{
+                                                                                                                                                                padding:26px 20px;
+                                                                                                                                                                display:block}
+                                                                                                                                                                .local-label{
+                                                                                                                                                                  display:inline-block;
+                                                                                                                                                                  margin-top:18px}
+                                                                                                                                                                  h1{
+                                                                                                                                                                    font-size:25px}
+                                                                                                                                                                    .workspace{
+                                                                                                                                                                      display:block;
+                                                                                                                                                                      padding:26px 20px}
+                                                                                                                                                                      .list-section{
+                                                                                                                                                                        border-left:0;
+                                                                                                                                                                        border-top:1px solid var(--border);
+                                                                                                                                                                        padding:30px 0 0;
+                                                                                                                                                                        margin-top:32px}
+                                                                                                                                                                        .app-footer{
+                                                                                                                                                                          padding:20px;
+                                                                                                                                                                          display:block;
+                                                                                                                                                                          line-height:1.7}
+                                                                                                                                                                          .app-footer span{
+                                                                                                                                                                            display:block}
+                                                                                                                                                                            .ticket-footer{
+                                                                                                                                                                              display:block}
+                                                                                                                                                                              .ticket-footer time{
+                                                                                                                                                                                display:block;
+                                                                                                                                                                                margin-top:5px}
+                                                                                                                                                                                .work-sheet{
+                                                                                                                                                                                  min-height:calc(100vh - 76px)}
+                                                                                                                                                                                }
+
+.diagnostics {
+  margin: 4px 0 24px;
+  padding: 18px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.diagnostics-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.diagnostics h3 {
+  font-size: 15px;
+  font-weight: 500;
+}
+.ai-label {
+  font-size: 12px;
+  color: var(--accent);
+}
+.diagnose-button {
+  width: 100%;
+  padding: 10px 14px;
+  margin-top: 14px;
+  background: white;
+  color: #354d58;
+  border: 1px solid #b7c2c6;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.diagnose-button:hover:not(:disabled) {
+  background: #f1f5f6;
+}
+.diagnostic-result {
+  margin-top: 16px;
+}
+.diagnostic-answer {
+  font-size: 14px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.diagnostic-error {
+  margin: 14px 0 0;
+}
+.outage-check {
+  border-top: 1px solid var(--border);
+  padding: 18px 0;
+  margin-bottom: 4px;
+}
+.outage-check h3 {
+  font-size: 15px;
+  font-weight: 500;
+}
+.outage-check label {
+  display: block;
+  font-size: 14px;
+  margin: 14px 0 8px;
+}
+.outage-check select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  font: inherit;
+  font-size: 14px;
+  color: #354d58;
+  background: white;
+  border: 1px solid #b7c2c6;
+  border-radius: 6px;
+}
+.outage-check select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.outage-result {
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.outage-result p {
+  margin-top: 8px;
+}
+.outage-assistant {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.outage-assistant .field-help {
+  font-size: 13px;
+  line-height: 1.6;
+}
+.outage-clarification {
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.draft-assistant {
+  border-top: 1px solid var(--border);
+  padding: 18px 0;
+}
+.draft-assistant h3 {
+  font-size: 15px;
+  font-weight: 500;
+}
+.draft-assistant .field-help {
+  font-size: 13px;
+  line-height: 1.6;
+}
+.draft-preview {
+  margin-top: 18px;
+}
+.draft-preview h4 {
+  margin-bottom: 14px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.draft-cancel {
+  margin-top: 12px;
+  border: 0;
+  background: transparent;
+  color: #354d58;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font: inherit;
+  font-size: 14px;
+  padding: 8px 0;
+}
+.history-link {
+  margin-left: auto;
+  margin-right: 20px;
+  color: var(--accent);
+  font-size: 14px;
+  text-underline-offset: 3px;
+}
+.history-section {
+  padding: 30px 40px;
+  border-top: 1px solid var(--border);
+}
+.history-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.history-heading h2 {
+  font-size: 20px;
+  font-weight: 500;
+}
+.history-refresh {
+  background: white;
+  border: 1px solid #b7c2c6;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font: inherit;
+  font-size: 14px;
+  color: #354d58;
+}
+.history-section > .field-help {
+  margin-top: 10px;
+  font-size: 13px;
+}
+.history-list {
+  margin-top: 18px;
+}
+.history-run {
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.history-run summary {
+  padding: 14px 0;
+  cursor: pointer;
+}
+.history-summary-head {
+  display: inline-flex;
+  width: calc(100% - 22px);
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+.history-summary-head strong {
+  font-weight: 500;
+}
+.history-summary-head time {
+  margin-left: auto;
+  color: #59666b;
+  font-size: 13px;
+}
+.history-state {
+  font-size: 13px;
+  color: #59666b;
+}
+.history-state-failed {
+  color: #8b3a32;
+}
+.history-question {
+  display: block;
+  margin: 5px 0 0 18px;
+}
+.history-run dl {
+  margin: 0 0 18px 18px;
+}
+.history-run dt {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #59666b;
+}
+.history-run dd {
+  margin: 5px 0 0;
+  white-space: pre-wrap;
+}
+.history-empty {
+  margin-top: 18px;
+  font-size: 14px;
+}
+@media(max-width:620px) {
+  .history-section { padding: 26px 20px; }
+  .history-heading { align-items: flex-start; flex-wrap: wrap; }
+  .history-summary-head time { margin-left: 0; flex-basis: 100%; }
+  .history-link { margin-right: 0; }
+}
+.diagnostic-sources {
+  margin-top: 18px;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.diagnostic-sources h4 {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.diagnostic-sources details {
+  border-top: 1px solid var(--border);
+  padding: 10px 0;
+}
+.diagnostic-sources summary {
+  cursor: pointer;
+}
+.diagnostic-source-text {
+  margin: 10px 0;
+  white-space: pre-wrap;
+}
+.diagnostic-sources a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media(prefers-reduced-motion:reduce){
+                                                                                                                                                                                  *{
+                                                                                                                                                                                    transition:none!important;
+                                                                                                                                                                                    scroll-behavior:auto!important}
+                                                                                                                                                                                  }
+

@@ -1,0 +1,5 @@
+# Official Qwen/Qwen3-4B-GGUF, Q4_K_M; source and checksum in docs/local-model-setup.md.
+# Local GGUF import is supported by Ollama and requires no registry download.
+FROM ../.local/qwen3-4b-q4km.gguf
+PARAMETER num_ctx 4096
+PARAMETER num_predict 512

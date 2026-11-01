@@ -1,0 +1,24 @@
+name: Container checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Prepare ephemeral credentials
+        run: python3 scripts/compose_env.py --output "$RUNNER_TEMP/provider-support-ci.env"
+      - name: Build UI and test images
+        run: docker compose -p provider-support-ci --env-file "$RUNNER_TEMP/provider-support-ci.env" --profile tests build bootstrap tests
+      - name: Run backend integration and unit tests
+        run: docker compose -p provider-support-ci --env-file "$RUNNER_TEMP/provider-support-ci.env" --profile tests run --rm tests
+      - name: Clean ephemeral databases
+        if: always()
+        run: |
+          if [ -f "$RUNNER_TEMP/provider-support-ci.env" ]; then
+            docker compose -p provider-support-ci --env-file "$RUNNER_TEMP/provider-support-ci.env" --profile tests down --volumes --remove-orphans
+          fi
